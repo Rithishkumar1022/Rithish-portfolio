@@ -1,4 +1,4 @@
-import resumeImage from "../../assets/0fc11f5ef144c210fdcda694dd943377af547960.png";
+import resumeImage from "../../assets/2421a8fd96f7e7f66e6f7eb0566ea49fed29146b.png";
 
 export const downloadResume = (resumeUrl?: string) => {
   // Use provided URL or default to resumeImage
