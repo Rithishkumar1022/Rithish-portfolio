@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { resumeData } from "../data/resume";
-import profileImage from "../../assets/0fc11f5ef144c210fdcda694dd943377af547960.png";
+import profileImage from "figma:asset/0fc11f5ef144c210fdcda694dd943377af547960.png";
 
 export function HeroPro() {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -23,12 +23,12 @@ export function ProjectsAgency() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mb-20"
+          className="max-w-4xl mb-12 lg:mb-20"
         >
-          <span className="inline-block text-sm text-white/40 uppercase tracking-[0.3em] mb-6">
+          <span className="inline-block text-xs sm:text-sm text-white/40 uppercase tracking-[0.3em] mb-4 lg:mb-6">
             Selected Works
           </span>
-          <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight">
             Featured{" "}
             <span className="italic bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Projects
@@ -37,7 +37,7 @@ export function ProjectsAgency() {
         </motion.div>
 
         {/* Projects Showcase */}
-        <div className="space-y-32">
+        <div className="space-y-20 lg:space-y-32">
           {resumeData.projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -47,9 +47,9 @@ export function ProjectsAgency() {
               className="group relative"
             >
               {/* Project Number - Large Background */}
-              <div className="absolute -top-16 left-0 md:-left-12 pointer-events-none">
+              <div className="absolute -top-8 sm:-top-16 left-0 md:-left-12 pointer-events-none">
                 <motion.span
-                  className="text-[180px] md:text-[280px] font-bold leading-none bg-gradient-to-b from-white/[0.03] to-transparent bg-clip-text text-transparent select-none"
+                  className="text-[100px] sm:text-[180px] md:text-[280px] font-bold leading-none bg-gradient-to-b from-white/[0.03] to-transparent bg-clip-text text-transparent select-none"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 1, delay: index * 0.3 + 0.2 }}
@@ -64,32 +64,32 @@ export function ProjectsAgency() {
                 whileHover={{ x: 8 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+                <div className="grid lg:grid-cols-12 gap-6 lg:gap-16 items-center">
                   {/* Left Side - Content */}
-                  <div className={`lg:col-span-5 space-y-8 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className={`lg:col-span-5 space-y-6 lg:space-y-8 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                     {/* Period Badge */}
                     <motion.div
-                      className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm"
+                      className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm"
                       whileHover={{ scale: 1.05, x: 4 }}
                     >
                       <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse" />
-                      <span className="text-sm text-white/60 uppercase tracking-[0.2em]">
+                      <span className="text-xs sm:text-sm text-white/60 uppercase tracking-[0.2em]">
                         {project.period}
                       </span>
                     </motion.div>
 
                     {/* Title & Description */}
-                    <div className="space-y-6">
-                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                    <div className="space-y-4 lg:space-y-6">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
                         {project.title}
                       </h3>
-                      <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+                      <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed">
                         {project.description}
                       </p>
                     </div>
 
                     {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
                       {project.tech.map((tech, techIndex) => (
                         <motion.span
                           key={tech}
@@ -97,7 +97,7 @@ export function ProjectsAgency() {
                           animate={isInView ? { opacity: 1, scale: 1 } : {}}
                           transition={{ duration: 0.4, delay: index * 0.3 + techIndex * 0.05 }}
                           whileHover={{ scale: 1.1, y: -2 }}
-                          className="px-4 py-2 bg-white/5 border border-white/10 text-white/80 rounded-full text-sm font-medium hover:bg-white/10 hover:border-white/20 transition-all cursor-default"
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 text-white/80 rounded-full text-xs sm:text-sm font-medium hover:bg-white/10 hover:border-white/20 transition-all cursor-default"
                         >
                           {tech}
                         </motion.span>
@@ -106,14 +106,14 @@ export function ProjectsAgency() {
 
                     {/* CTA Link */}
                     <motion.div
-                      className="flex items-center gap-3 text-white/60 group-hover:text-white transition-colors pt-4"
+                      className="flex items-center gap-2 sm:gap-3 text-white/60 group-hover:text-white transition-colors pt-4"
                       whileHover={{ x: 8 }}
                     >
-                      <span className="text-sm uppercase tracking-[0.2em] font-medium">
+                      <span className="text-xs sm:text-sm uppercase tracking-[0.2em] font-medium">
                         View Project
                       </span>
                       <motion.svg
-                        className="w-6 h-6"
+                        className="w-5 h-5 sm:w-6 sm:h-6"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -132,7 +132,7 @@ export function ProjectsAgency() {
 
                   {/* Right Side - Visual */}
                   <div className={`lg:col-span-7 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 group-hover:border-white/20 transition-all">
+                    <div className="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 group-hover:border-white/20 transition-all">
                       {/* Gradient Background */}
                       <motion.div
                         className={`absolute inset-0 ${
@@ -167,7 +167,7 @@ export function ProjectsAgency() {
 
                       {/* Floating Geometric Shapes */}
                       <motion.div
-                        className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-white/20 rounded-full"
+                        className="absolute top-1/4 left-1/4 w-20 h-20 sm:w-32 sm:h-32 border-2 border-white/20 rounded-full"
                         animate={{
                           y: [0, -30, 0],
                           rotate: [0, 180, 360],
@@ -179,7 +179,7 @@ export function ProjectsAgency() {
                         }}
                       />
                       <motion.div
-                        className="absolute bottom-1/4 right-1/4 w-24 h-24 border-2 border-white/20 rounded-2xl"
+                        className="absolute bottom-1/4 right-1/4 w-16 h-16 sm:w-24 sm:h-24 border-2 border-white/20 rounded-2xl"
                         animate={{
                           y: [0, 30, 0],
                           rotate: [0, -180, -360],
@@ -195,14 +195,14 @@ export function ProjectsAgency() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                       {/* Corner Arrow Icon */}
-                      <div className="absolute top-8 right-8">
+                      <div className="absolute top-4 right-4 sm:top-8 sm:right-8">
                         <motion.div
-                          className="w-16 h-16 rounded-full border-2 border-white/30 backdrop-blur-sm flex items-center justify-center group-hover:border-white group-hover:bg-white transition-all"
+                          className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white/30 backdrop-blur-sm flex items-center justify-center group-hover:border-white group-hover:bg-white transition-all"
                           whileHover={{ rotate: 45, scale: 1.1 }}
                           transition={{ duration: 0.3 }}
                         >
                           <svg
-                            className="w-7 h-7 text-white group-hover:text-black transition-colors"
+                            className="w-5 h-5 sm:w-7 sm:h-7 text-white group-hover:text-black transition-colors"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -218,14 +218,14 @@ export function ProjectsAgency() {
                       </div>
 
                       {/* Bottom Label */}
-                      <div className="absolute bottom-8 left-8 right-8">
+                      <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8">
                         <motion.div
-                          className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl px-6 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                          className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl px-4 sm:px-6 py-3 sm:py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                           initial={{ y: 20 }}
                           whileHover={{ y: 0 }}
                         >
-                          <p className="text-white font-medium">Interactive Preview</p>
-                          <p className="text-white/60 text-sm">Click to explore project</p>
+                          <p className="text-sm sm:text-base text-white font-medium">Interactive Preview</p>
+                          <p className="text-white/60 text-xs sm:text-sm">Click to explore project</p>
                         </motion.div>
                       </div>
                     </div>
@@ -234,7 +234,7 @@ export function ProjectsAgency() {
 
                 {/* Progress Line */}
                 <motion.div
-                  className="mt-12 h-px bg-white/5"
+                  className="mt-8 sm:mt-12 h-px bg-white/5"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 1, delay: index * 0.3 + 0.5 }}
@@ -258,26 +258,26 @@ export function ProjectsAgency() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-32 text-center space-y-8"
+          className="mt-20 lg:mt-32 text-center space-y-6 lg:space-y-8"
         >
-          <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm text-white/60">Available for new projects</span>
+            <span className="text-xs sm:text-sm text-white/60">Available for new projects</span>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-2xl text-white/60">
+          <div className="space-y-3 sm:space-y-4">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/60">
               Interested in working together?
             </p>
             <motion.a
               href="#contact"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-medium text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all"
+              className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-medium text-base sm:text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all"
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.95 }}
             >
               <span>Let's Talk</span>
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

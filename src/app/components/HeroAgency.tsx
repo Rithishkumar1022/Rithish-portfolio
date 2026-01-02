@@ -14,7 +14,7 @@ export function HeroAgency() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export function HeroAgency() {
         >
           <div className="grid lg:grid-cols-12 gap-12 items-center min-h-screen py-32">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-12">
+            <div className="lg:col-span-7 space-y-8 lg:space-y-12">
               {/* Tag */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -85,13 +85,13 @@ export function HeroAgency() {
               </motion.div>
 
               {/* Main Heading */}
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <h1 className="text-7xl md:text-8xl xl:text-9xl font-bold tracking-tighter text-white leading-[0.9]">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter text-white leading-[0.9]">
                     {resumeData.name.split(" ")[0]}
                   </h1>
                 </motion.div>
@@ -100,15 +100,15 @@ export function HeroAgency() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="flex items-center gap-6"
+                  className="flex items-center gap-4 lg:gap-6"
                 >
-                  <h1 className="text-7xl md:text-8xl xl:text-9xl font-bold tracking-tighter bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-[0.9]">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-[0.9]">
                     {resumeData.name.split(" ")[1]}
                   </h1>
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="hidden md:block w-20 h-20 rounded-full border border-white/20 flex-shrink-0"
+                    className="hidden md:block w-16 h-16 lg:w-20 lg:h-20 rounded-full border border-white/20 flex-shrink-0"
                   >
                     <div className="w-full h-full flex items-center justify-center text-xs text-white/40 uppercase tracking-wider">
                       <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -133,7 +133,7 @@ export function HeroAgency() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl md:text-2xl text-white/70 max-w-2xl leading-relaxed"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl leading-relaxed"
               >
                 {resumeData.summary}
               </motion.p>
@@ -143,11 +143,11 @@ export function HeroAgency() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-wrap gap-3 lg:gap-4"
               >
                 <motion.a
                   href="#projects"
-                  className="group relative px-8 py-4 bg-white text-black rounded-full overflow-hidden"
+                  className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white text-black rounded-full overflow-hidden text-sm sm:text-base"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -177,7 +177,7 @@ export function HeroAgency() {
 
                 <motion.a
                   href="#contact"
-                  className="px-8 py-4 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors backdrop-blur-sm"
+                  className="px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors backdrop-blur-sm text-sm sm:text-base"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -190,7 +190,7 @@ export function HeroAgency() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10"
+                className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pt-6 lg:pt-8 border-t border-white/10"
               >
                 {[
                   { value: "2+", label: "Years Exp." },
@@ -198,8 +198,8 @@ export function HeroAgency() {
                   { value: "100%", label: "Dedication" },
                 ].map((stat, i) => (
                   <div key={i}>
-                    <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
-                    <p className="text-sm text-white/40 uppercase tracking-wider">
+                    <p className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</p>
+                    <p className="text-xs sm:text-sm text-white/40 uppercase tracking-wider">
                       {stat.label}
                     </p>
                   </div>
@@ -212,11 +212,11 @@ export function HeroAgency() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="lg:col-span-5 relative"
+              className="lg:col-span-5 relative mt-12 lg:mt-0"
             >
               <motion.div
                 style={{ scale, y, position: 'relative' }}
-                className="relative aspect-[3/4] rounded-3xl overflow-hidden"
+                className="relative aspect-[3/4] rounded-3xl overflow-hidden max-w-md mx-auto lg:max-w-none"
               >
                 {/* Image */}
                 <img
@@ -233,13 +233,13 @@ export function HeroAgency() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 1 }}
-                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20"
+                  className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/20"
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <MapPin className="w-5 h-5 text-white" />
-                    <span className="text-white">Chennai, India</span>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                    <span className="text-sm sm:text-base text-white">Chennai, India</span>
                   </div>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 sm:gap-3">
                     {Object.entries(resumeData.social)
                       .filter(([platform]) => ['github', 'linkedin', 'instagram'].includes(platform))
                       .map(([platform, url]) => {
@@ -254,11 +254,11 @@ export function HeroAgency() {
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 transition-all"
+                            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 transition-all"
                             whileHover={{ scale: 1.1, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                           >
-                            <IconComponent className="w-5 h-5" />
+                            <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                           </motion.a>
                         );
                       })}
@@ -280,7 +280,7 @@ export function HeroAgency() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl"
+                className="absolute -top-8 -right-8 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl"
               />
             </motion.div>
           </div>

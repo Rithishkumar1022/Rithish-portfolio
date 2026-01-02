@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import heroImg from "../../assets/0fc11f5ef144c210fdcda694dd943377af547960.png";
+import heroImg from "figma:asset/0fc11f5ef144c210fdcda694dd943377af547960.png";
 import { ArrowDown } from "lucide-react";
 import { BackgroundRipple } from "./ui/BackgroundRipple";
 

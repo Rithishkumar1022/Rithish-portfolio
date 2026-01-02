@@ -23,12 +23,12 @@ export function AboutAgency() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mb-20"
+          className="max-w-4xl mb-12 lg:mb-20"
         >
-          <span className="inline-block text-sm text-white/40 uppercase tracking-[0.3em] mb-6">
+          <span className="inline-block text-xs sm:text-sm text-white/40 uppercase tracking-[0.3em] mb-4 lg:mb-6">
             About Me
           </span>
-          <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 lg:mb-8">
             Building{" "}
             <span className="italic bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               innovative solutions
@@ -37,7 +37,7 @@ export function AboutAgency() {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-16 lg:mb-24">
           {resumeData.skills.map((skill, index) => (
             <motion.div
               key={skill}
@@ -45,15 +45,15 @@ export function AboutAgency() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all"
+              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 hover:bg-white/10 transition-all"
             >
-              <div className="absolute top-6 right-6 text-6xl font-bold text-white/5 group-hover:text-white/10 transition-colors">
+              <div className="absolute top-4 sm:top-6 right-4 sm:right-6 text-4xl sm:text-6xl font-bold text-white/5 group-hover:text-white/10 transition-colors">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 relative z-10">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 relative z-10">
                 {skill}
               </h3>
-              <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
+              <div className="w-10 sm:w-12 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
             </motion.div>
           ))}
         </div>
@@ -63,14 +63,14 @@ export function AboutAgency() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-3xl p-12"
+          className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-12"
         >
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             <div>
-              <h3 className="text-sm text-white/40 uppercase tracking-[0.3em] mb-6">
+              <h3 className="text-xs sm:text-sm text-white/40 uppercase tracking-[0.3em] mb-4 sm:mb-6">
                 Tech Stack
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {resumeData.tools.map((tool, index) => (
                   <motion.span
                     key={tool}
@@ -78,7 +78,7 @@ export function AboutAgency() {
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
                     whileHover={{ scale: 1.1, y: -4 }}
-                    className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white/20 transition-colors cursor-default"
+                    className="px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full text-xs sm:text-sm font-medium hover:bg-white/20 transition-colors cursor-default"
                   >
                     {tool}
                   </motion.span>
@@ -87,7 +87,7 @@ export function AboutAgency() {
             </div>
 
             <div>
-              <h3 className="text-sm text-white/40 uppercase tracking-[0.3em] mb-6">
+              <h3 className="text-xs sm:text-sm text-white/40 uppercase tracking-[0.3em] mb-4 sm:mb-6">
                 Education
               </h3>
               {resumeData.education.map((edu, index) => (
@@ -96,13 +96,13 @@ export function AboutAgency() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="border-l-2 border-blue-400/50 pl-6 mb-6"
+                  className="border-l-2 border-blue-400/50 pl-4 sm:pl-6 mb-6"
                 >
-                  <h4 className="text-xl font-bold text-white mb-2">{edu.degree}</h4>
-                  <p className="text-white/60 mb-1">{edu.school}</p>
-                  <p className="text-sm text-white/40">{edu.period}</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-2">{edu.degree}</h4>
+                  <p className="text-sm sm:text-base text-white/60 mb-1">{edu.school}</p>
+                  <p className="text-xs sm:text-sm text-white/40">{edu.period}</p>
                   {edu.score && (
-                    <p className="text-sm text-blue-400 mt-2 font-medium">{edu.score}</p>
+                    <p className="text-xs sm:text-sm text-blue-400 mt-2 font-medium">{edu.score}</p>
                   )}
                 </motion.div>
               ))}
@@ -111,11 +111,11 @@ export function AboutAgency() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1 }}
-                className="mt-8 pt-8 border-t border-white/10"
+                className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10"
               >
                 <div className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0"
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 mt-1 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -133,8 +133,8 @@ export function AboutAgency() {
                     />
                   </svg>
                   <div>
-                    <p className="text-sm text-white/40 mb-1">Based in</p>
-                    <p className="text-white">{resumeData.location}</p>
+                    <p className="text-xs sm:text-sm text-white/40 mb-1">Based in</p>
+                    <p className="text-sm sm:text-base text-white">{resumeData.location}</p>
                   </div>
                 </div>
               </motion.div>
